@@ -1,0 +1,19 @@
+.contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form{
+   /* border: 1px solid black; */
+    height: 300px;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.form-group{
+    text-align: left;
+}
+.btn{
+    display: flex;
+    justify-content: flex-start;
+}
