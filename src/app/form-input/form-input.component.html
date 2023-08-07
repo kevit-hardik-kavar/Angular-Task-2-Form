@@ -1,5 +1,196 @@
-<p>form-input works!</p>
+<div class="main-box">
+  <h1 style="color: white; position: absolute; top: 1%; font-size: 30px">
+    <b>Enrollment Form</b>
+  </h1>
+  <div class="form-box">
+    <form (ngSubmit)="saveForm(f)" #f="ngForm">
+      <div class="form-validation">
+        <label for="firstName"
+          >Firstname<span style="color: red">*</span></label
+        >
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          required
+          minlength="3"
+          ngModel
+          #firstName="ngModel"
+        />
+        <small
+          *ngIf="firstName.invalid && firstName.touched"
+          style="display: block; text-align: right; color: red"
+          >Firstname is required</small
+        >
+      </div>
+      <div class="form-validation">
+        <label for="lastname">Lastname<span style="color: red">*</span> </label>
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          required
+          minlength="3"
+          ngModel
+          #lastName="ngModel"
+        />
+        <small
+          *ngIf="lastName.invalid && lastName.touched"
+          style="display: block; text-align: right; color: red"
+          >Lastname is required</small
+        >
+      </div>
+      <div class="form-validation">
+        <label for="dob">Date Of Birth<span style="color: red">*</span> </label>
+        <input
+          type="date"
+          name="dob"
+          required
+          ngModel
+          #dob="ngModel"
+          min="01-01-1960"
+          max="01-01-2010"
+        />
+        <div *ngIf="dob.invalid && dob.touched" style="color: red">
+          <small *ngIf="dob.errors?.required">Date of birth is required</small>
+          <small *ngIf="dob.errors?.min">Date of birth can not be less than 1960</small>
+          <small *ngIf="dob.errors?.max">Date of birth can not be more than 2014</small>
 
 
-<button>Reset</button>
-<button (click)="onSaveForm()">Save</button>
+        </div>
+      </div>
+      <div class="form-validation">
+        <label for="email">Email<span style="color: red">*</span></label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email Adress"
+          required
+          ngModel
+          #email="ngModel"
+          pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
+        />
+        <div *ngIf="email.invalid && email.touched" style="color: red">
+          <small *ngIf="f.controls['email']?.errors?.required"
+            >Email is required
+          </small>
+          <small *ngIf="email.errors?.pattern">Invalid Email</small>
+        </div>
+      </div>
+      <div class="form-validation">
+        <label for="phone">Mobile Number<span style="color: red">*</span></label>
+        <input
+          type="number"
+          name="mobileNumber"
+          placeholder="Enter Your Phone Number"
+          class="full-width"
+          required
+          maxlength="10"
+          minlength="5"
+          ngModel
+          #mobileNumber="ngModel"
+          pattern="[- +()0-9]{10,12}"
+        />
+        <div
+          *ngIf="mobileNumber.invalid && mobileNumber.touched"
+          style="color: red"
+        >
+          <small *ngIf="f.controls['mobileNumber']?.errors?.required"
+            >Phone Number is required</small
+          >
+          <small *ngIf="f.controls['mobileNumber']?.errors?.pattern"
+            >Phone Number length must be 10</small
+          >
+        </div>
+      </div>
+      <div class="form-validation">
+        <label for="education">Institute Name<span style="color: red">*</span></label>
+        <input
+          type="text"
+          name="education"
+          placeholder="Enter Institutes"
+          class="full-width"
+          required
+          ngModel
+          #education="ngModel"
+        />
+      </div>
+      <select name="board" ngModel required #board="ngModel">
+        <option value="" style="color: grey">--Please Select Degree--</option>
+        <option value="ssc" name="ssc">SSC</option>
+        <option value="hsc" name="hsc">SSC</option>
+        <option value="Engineering" name="engineering">B.E</option>
+      </select>
+      <input type="number" placeholder="Percentage" ngModel />
+      <div class="hobby">
+        <label for="hobby">Hobby :</label>
+        <input
+          type="checkbox"
+          name="sports"
+          class="checkbox-hobby"
+          ngModel
+          #chekbox="ngModel"
+        /><span>Sprots</span>
+        <input
+          type="checkbox"
+          name="dance"
+          class="checkbox-hobby"
+          ngModel
+          #chekbox="ngModel"
+        /><span>Dance</span>
+        <input
+          type="checkbox"
+          name="reading"
+          class="checkbox-hobby"
+          ngModel
+          #chekbox="ngModel"
+        /><span>Reading</span>
+        <input
+          type="checkbox"
+          name="travel"
+          class="checkbox-hobby"
+          ngModel
+        /><span>Travelling</span>
+      </div>
+      <div class="hobby">
+        <label for="gender">Gender<span style="color: red">*</span> : </label>
+        <input
+          type="radio"
+          class="checkbox-hobby"
+          id="male"
+          name="gender"
+          value="male"
+          required
+          ngModel
+        /><span for="male">Male</span>
+        <input
+          type="radio"
+          class="checkbox-hobby"
+          id="female"
+          name="gender"
+          value="female"
+          required
+          ngModel
+        /><span for="female">Female</span>
+      </div>
+      <textarea
+        name="adress"
+        id="address"
+        placeholder="Adress..."
+        style="width: 450px; height: 90px; margin: 10px"
+        ngModel
+      ></textarea>
+      <textarea
+        name="adress"
+        id="address"
+        placeholder="Add Summary..."
+        style="width: 450px; height: 90px; margin: 10px"
+        ngModel
+      ></textarea>
+      <div class="button-area">
+        <button type="reset">Reset</button>
+        <button type="submit" [disabled]="!f.form.valid">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

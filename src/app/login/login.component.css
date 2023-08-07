@@ -1,23 +1,70 @@
-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-
+.login-page {
+  background-image: linear-gradient(
+    to right,
+    rgb(180, 21, 219),
+    rgb(20, 81, 211)
+  );
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.example-form{
-    display: flex;
-    flex-direction: column;
-    min-width: 500px;
-    border: 1px solid #ddd;
-    padding: 35px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    justify-content: center;
-    background-color: rgb(221, 247, 248);
+.login-form {
+  width: 450px;
+  height: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
 }
-button{
-    width: 150px;
-    height: 40px;
-    padding: 20px;
-    
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+input {
+  width: 350px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+  /* border: none; */
+  /* border-bottom: 1px solid gray; */
+}
+input.ng-touched.ng-invalid {
+  color: red;
+  border: 1px solid red;
+}
+button {
+  margin-top: 20px;
+  width: 100px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(180, 21, 219),
+    rgb(20, 81, 211)
+  );
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+small {
+  color: red;
+  padding-top: 4px;
+  display: block;
 }

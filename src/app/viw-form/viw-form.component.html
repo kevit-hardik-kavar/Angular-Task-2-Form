@@ -1,1 +1,41 @@
-<p>viw-form works!</p>
+<h1 style="text-align: center; margin-top: 50px;">Check the Details You have filled</h1>
+<table *ngFor="let data of userDetails">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>FirstName</td>
+            <td>{{data.firstName}}</td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td>{{data.lastName}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{data.email}}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>{{data.mobileNumber}}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{data.gender}}</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>{{data.dob}}</td>
+        </tr>
+        <tr>
+            <td>Institute</td>
+            <td>{{data.education}}</td>
+        </tr>
+       
+    </tbody>
+</table>

@@ -7,12 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { ViwFormComponent } from './viw-form/viw-form.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
-import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
-
+import { FormsModule } from '@angular/forms';
+import { FormDataService } from './form-data.service';
 
 @NgModule({
   declarations: [
@@ -24,14 +20,10 @@ import {MatIconModule} from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    MatIconModule,
     AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [FormDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

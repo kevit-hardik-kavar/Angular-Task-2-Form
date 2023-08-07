@@ -5,8 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class FormDataService {
 
-  formData:Record<string,any>= {
-  }
+  formData:any= []
 
   constructor() { }
+
+  
 }
